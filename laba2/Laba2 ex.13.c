@@ -36,7 +36,7 @@ int main()
             break;
 
         case 3:
-            if ( ((log(-80 * a * a - 46 * a * x + 21 * x * x + 1)) / (log(10))<=0) ||  ((log(-80 * a * a - 46 * a * x + 21 * x * x + 1)) / (log(10))>=0) )
+            if (-80 * a * a - 46 * a * x + 21 * x * x + 1 > 0 )
             {
             Y = (log(-80 * a * a - 46 * a * x + 21 * x * x + 1)) / (log(10));
             printf("%f\n", Y);
