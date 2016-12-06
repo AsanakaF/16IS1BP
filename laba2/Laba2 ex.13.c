@@ -12,7 +12,7 @@ int main()
     switch (un)
     {
         case 1:
-            if ((25 * a * a + 30 * a * x + 9 * x * x)!=0)
+            if (fabs(25 * a * a + 30 * a * x + 9 * x * x) >= 0.00001)
             {
                 G = (9 * (7 * a * a - 19 * a * x + 10 * x * x)) / (25 * a * a + 30 * a * x + 9 * x * x);
                 printf("G = %f\n", G);
@@ -24,7 +24,7 @@ int main()
             break;
 
         case 2:
-            if ( (cos(9 * a * a - 13 * a * x - 10 * x * x)<=0) || ( cos(9 * a * a - 13 * a * x - 10 * x * x)>=0) )
+            if ((cos(9 * a * a - 13 * a * x - 10 * x * x) >= -1) && (cos(9 * a * a - 13 * a * x - 10 * x * x) <= 1))
             {
                 F = cos(9 * a * a - 13 * a * x - 10 * x * x);
                 printf("%f\n", F);
@@ -36,7 +36,7 @@ int main()
             break;
 
         case 3:
-            if (-80 * a * a - 46 * a * x + 21 * x * x + 1 > 0 )
+            if (-80 * a * a - 46 * a * x + 21 * x * x + 1 > 0.0001 )
             {
             Y = (log(-80 * a * a - 46 * a * x + 21 * x * x + 1)) / (log(10));
             printf("%f\n", Y);
