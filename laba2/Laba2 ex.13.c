@@ -5,8 +5,11 @@ int main()
     int un;
     double G,F,Y,x,a;
 
+    printf("Введите x: "); 
     scanf("%lf", &x);
+    printf("Введите a: ");
     scanf("%lf", &a);
+    printf("Введите G-1 F-2 Y-3: ");
     scanf("%d", &un);
 
     switch (un)
