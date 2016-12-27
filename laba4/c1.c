@@ -8,3 +8,4 @@ int main(void)
         printf("%f\n", mas[i]);
     return 0;
 }
+ 
