@@ -20,7 +20,7 @@ typedef struct verification_points point;
 
 typedef struct Points Point;
 
-Point mas_generation(void) /*Функция генерации случайных чисел*/
+Point mas_generation(void) /*Функция генерации точек в рандомном порядке*/
 {
     Point mas;  
     int i = 0;
