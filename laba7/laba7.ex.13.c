@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 int main() {
-    FILE *file, *file1;
+    FILE *file, *file1;     /*Вводим файлы*/
     struct {
         double G[100];
         double F[100];
@@ -111,7 +111,7 @@ int main() {
         printf("Ошибка при открытии файла.\n");
         exit(1);
     }
-    while (!feof(file1))
+    while (!feof(file1))   /*проверяем достигнут ли конец файла*/
     {
         fscanf(file, "%s", input);
         printf("%s\n", input);
