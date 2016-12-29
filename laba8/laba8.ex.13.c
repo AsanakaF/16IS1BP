@@ -27,8 +27,8 @@ Point mas_generation(void) /*Функция генерации случайны�
     srand(time(NULL));
 
     for (i = 0; i < 1000; i++) {
-        mas.x[i] = (double) rand() / RAND_MAX * (5.0 + 5.0) - 5.0;
-        mas.y[i] = (double) rand() / RAND_MAX * (5.0 + 5.0) - 5.0;
+        mas.x[i] = (double) rand() / RAND_MAX * (50.0 + 50.0) - 50.0;
+        mas.y[i] = (double) rand() / RAND_MAX * (50.0 + 50.0) - 50.0;
     }
     return mas;
 }
