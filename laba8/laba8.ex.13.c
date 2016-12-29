@@ -6,8 +6,8 @@
 
 struct Points
 {
-    double x[100];    /*структура, в которой хранятся все точки*/
-    double y[100];
+    double x[1000];    /*структура, в которой хранятся все точки*/
+    double y[1000];
 };
 
 struct verification_points
@@ -20,31 +20,31 @@ typedef struct verification_points point;
 
 typedef struct Points Point;
 
-Point mas_generation(void)
+Point mas_generation(void) /*Функция генерации случайных чисел*/
 {
-    Point mas;  /*функция генерации массива случайных чисел в заданном диапазоне*/
+    Point mas;  
     int i = 0;
     srand(time(NULL));
 
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < 1000; i++) {
         mas.x[i] = (double) rand() / RAND_MAX * (5.0 + 5.0) - 5.0;
         mas.y[i] = (double) rand() / RAND_MAX * (5.0 + 5.0) - 5.0;
     }
     return mas;
 }
 
-int belong_to_locality(point mas, point mass,double R)
+int belong_to_locality(point mas, point mass,double R) /*функция проверки точки на принадлежность окрестности*/
 {
-    double dist; /*функция проверки точки на принадлежность окрестности*/
+    double dist; 
     dist = sqrt((pow(2,mass.x2-mas.x2))+pow(2,mass.y2-mas.y2));
     if (dist <= R)
         return 1;
     else
         return 0;
 }
-int points_quantity(double R)
+int points_quantity(double R) /*функция-счетчик точек,принадлежащих окрестности*/
 {
-    point p, p_for_fun; /*функция-счетчик точек,принадлежащих окрестности*/
+    point p, p_for_fun; 
     Point mass;
     int counter = 0;
     int i = 0, c = 0;
@@ -56,7 +56,7 @@ int points_quantity(double R)
     mass.x[c] = p.x2;
     mass.y[c] = p.y2;
 
-    for (i = 0; i < 100; i++)
+    for (i = 0; i < 1000; i++)
     {
         p_for_fun.x2 = mass.x[i];
         p_for_fun.y2 = mass.y[i];
@@ -76,9 +76,9 @@ int main()
 {
     double radius,start,stop;
     srand(time(NULL));
-
+    printf("%s", "Введите радиус: ");
+    scanf("%lf", &radius);
     start = omp_get_wtime();
-    radius = (double) rand() / RAND_MAX * (30.0);
     printf("Радиус окрестности: %lf\n", radius);
     printf("Количество точек в окрестности: %d\n", points_quantity(radius));
     stop = omp_get_wtime();
