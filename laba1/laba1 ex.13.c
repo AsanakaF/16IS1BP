@@ -4,7 +4,9 @@ int main()
 {
     double G,F,Y,x,a;
 
+    printf("Введите x: ");
     scanf("%lf", &x);
+    printf("Введите a: ");
     scanf("%lf", &a);
 
     G=(9*(7*a*a-19*a*x+10*x*x))/(25*a*a+30*a*x+9*x*x);
