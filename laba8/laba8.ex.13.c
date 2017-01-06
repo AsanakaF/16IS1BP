@@ -74,6 +74,7 @@ int points_quantity(double R) /*функция-счетчик точек,при�
 
 int main()
 {
+    FILE* laba8;
     double radius,start,stop;
     srand(time(NULL));
     printf("%s", "Введите радиус: ");
@@ -83,5 +84,8 @@ int main()
     printf("Количество точек в окрестности: %d\n", points_quantity(radius));
     stop = omp_get_wtime();
     printf("Время работы программы: %lf\n\n", stop - start);
+    output = fopen("/home/user/laba8.txt","a");
+    fprintf(laba8,"%lf\n",end - start);
+    fclose(laba8);
     return 0;
 }
