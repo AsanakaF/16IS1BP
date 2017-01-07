@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdio.h>
 
 double f(double x) {
@@ -25,7 +24,7 @@ else a = x;
 
 n = n + 1;
 
-} while (fabs(a - b) >= c);
+} while ((a - b) >= c);
 printf("Минимум функции = %lf\n", a);
 return 0;
 }
