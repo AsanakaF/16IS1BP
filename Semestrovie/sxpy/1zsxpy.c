@@ -3,7 +3,7 @@
 #include <omp.h>
 #include <time.h>
 
-int main() {
+int main() { 
     int x[100];
     int timer[1000], start, stop;
     int i = 0;
