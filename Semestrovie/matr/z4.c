@@ -15,7 +15,7 @@ int main() {
             matr2[i][j] = rand()%20;
             
             printf("matr1 %d\n", matr1[i][j]);
-            printf("matr1 %d\n", matr1[i][j]);
+            printf("matr2 %d\n", matr2[i][j]);
         }
     }
     printf("\n");
