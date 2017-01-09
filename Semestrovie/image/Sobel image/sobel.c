@@ -8,7 +8,7 @@
 	
 	void
 	Get_pixels_Gy(const BMP *bmp, unsigned long x, unsigned long y, unsigned char *g, unsigned char *b, unsigned char *r, unsigned char *r1, unsigned char *r2,
-	             unsigned char *r3, unsigned char *r4, unsigned char *r5, );
+	             unsigned char *r3, unsigned char *r4, unsigned char *r5);
 	
 	int main(void)
 	{
