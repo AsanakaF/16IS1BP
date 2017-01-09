@@ -3,12 +3,12 @@
 	#include <math.h>
 	
 	void
-	Get_pixels_Gx(const BMP *bmp, unsigned long x, unsigned long y, unsigned char *r, unsigned char *r1, unsigned char *r2,
-	             unsigned char *r3, unsigned char *r4, unsigned char *r5, unsigned char *g, unsigned char *b);
+	Get_pixels_Gx(const BMP *bmp, unsigned long x, unsigned long y, unsigned char *g, unsigned char *b, unsigned char *r, unsigned char *r1, unsigned char *r2,
+	             unsigned char *r3, unsigned char *r4, unsigned char *r5);
 	
 	void
-	Get_pixels_Gy(const BMP *bmp, unsigned long x, unsigned long y, unsigned char *r, unsigned char *r1, unsigned char *r2,
-	             unsigned char *r3, unsigned char *r4, unsigned char *r5, unsigned char *g, unsigned char *b);
+	Get_pixels_Gy(const BMP *bmp, unsigned long x, unsigned long y, unsigned char *g, unsigned char *b, unsigned char *r, unsigned char *r1, unsigned char *r2,
+	             unsigned char *r3, unsigned char *r4, unsigned char *r5, );
 	
 	int main(void)
 	{
@@ -19,13 +19,15 @@
 	    int Gx,Gy, Gint;
 	
 	    bmp = BMP_ReadFile( "/home/alena/lena.bmp" );
-	    BMP_CHECK_ERROR( stderr, -1 ); /* If an error has occurred, notify and exit */
+	    BMP_CHECK_ERROR( stderr, -1 ); /* если произошла ошибка,выводится уведомление и выход */ 
 	
 	    width = BMP_GetWidth( bmp );
 	    height = BMP_GetHeight( bmp );
 	    for ( x = 0 ; x < width-2 ; ++x )
 	    {
 	        for ( y = 0 ; y < height-2 ; ++y )
+			
+			/* Получить значения RGB пикселей */ 
 	        {
 	            Get_pixels_Gx(bmp, x, y, &r, &r1, &r2, &r3, &r4, &r5, &g, &b);
 	            Gx = (r+r1+r2) - (r3+r4+r5);
@@ -33,6 +35,8 @@
 	            Gy = (r+r1+r2) - (r3+r4+r5);
 	            Gint = (int)(sqrt(Gx * Gx + Gy * Gy));
 	
+			/* Приобразовываем значение RGB */ 
+			
 	            BMP_SetPixelRGB( bmp, x, y, Gint, Gint, Gint);
 	
 	        }
