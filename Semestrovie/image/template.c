@@ -32,4 +32,4 @@ int main(void)
     BMP_Free( bmp );
 
     return 0;
-}
+} 
