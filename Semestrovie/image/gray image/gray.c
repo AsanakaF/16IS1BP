@@ -9,7 +9,7 @@ UINT width, height;
 UINT x, y; 
 Int gray;
 
-bmp = BMP_ReadFile( "lena.bmp" ); 
+bmp = BMP_ReadFile( "/home/alena/lena.bmp" ); 
 BMP_CHECK_ERROR( stderr, -1 ); /* если произошла ошибка,выводится уведомление и выход */ 
 
 width = BMP_GetWidth( bmp ); 
@@ -28,7 +28,7 @@ BMP_SetPixelRGB( bmp, x, y, 255 - gray, 255 - gray, 255 - gray );
 } 
 } 
 
-BMP_WriteFile( bmp, "output.bmp"); 
+BMP_WriteFile( bmp, "/home/alena/output.gray.bmp"); 
 BMP_CHECK_ERROR( stderr, -2 ); 
 
 BMP_Free( bmp ); 
