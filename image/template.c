@@ -9,7 +9,7 @@ int main(void)
     UINT    x, y;
 
     bmp = BMP_ReadFile( "lena.bmp" );
-    BMP_CHECK_ERROR( stderr, -1 ); /* If an error has occurred, notify and exit */
+    BMP_CHECK_ERROR( stderr, -1 ); /* если произошла ошибка,выводится уведомление и выход */
 
     width = BMP_GetWidth( bmp );
     height = BMP_GetHeight( bmp );
@@ -18,10 +18,10 @@ int main(void)
     {
         for ( y = 0 ; y < height ; ++y )
         {
-            /* Get pixel's RGB values */
+            /* Получить значения RGB пикселей */
             BMP_GetPixelRGB( bmp, x, y, &r, &g, &b );
 
-            /* Invert RGB values */
+            /* Приобразовываем значение RGB */
             BMP_SetPixelRGB( bmp, x, y, 255 - r, 255 - g, 255 - b );
         }
     }
