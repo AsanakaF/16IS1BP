@@ -7,7 +7,7 @@ BMP* bmp;
 UCHAR r, g, b; 
 UINT width, height; 
 UINT x, y; 
-Int gray;
+int gray;
 
 bmp = BMP_ReadFile( "/home/alena/lena.bmp" ); 
 BMP_CHECK_ERROR( stderr, -1 ); /* если произошла ошибка,выводится уведомление и выход */ 
@@ -23,7 +23,7 @@ for ( y = 0 ; y < height ; ++y )
 BMP_GetPixelRGB( bmp, x, y, &r, &g, &b ); 
 
 /* Приобразовываем значение RGB */ 
-Gray = (r + g + b)/3;
+gray = (r + g + b)/3;
 BMP_SetPixelRGB( bmp, x, y, 255 - gray, 255 - gray, 255 - gray ); 
 } 
 } 
