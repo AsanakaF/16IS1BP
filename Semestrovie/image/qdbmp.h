@@ -120,4 +120,4 @@ const char*		BMP_GetErrorDescription		();
 		return( return_value );														\
 	}																				\
 
-#endif
+#endif 
