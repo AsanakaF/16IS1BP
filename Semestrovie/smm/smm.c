@@ -6,7 +6,7 @@ int main() {
     double smm[17], mas[10];
 
 
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < 10; i++) {
         mas[i] = rand() % 120;
         printf("%lf\n",mas[i]);
     }
